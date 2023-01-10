@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
@@ -64,10 +64,10 @@ const useStyles = makeStyles(theme => ({
   toolbar: theme.mixins.toolbar,
 }));
 
-export default function Main(props) {    
+const Main =(props: { data: any; })=> {
   const MainContents = props.data;
   const classes = useStyles();
-  const [open=true, setOpen] = React.useState();
+  const [open, setOpen] = useState<boolean>(true);
   
   function handleDrawerOpen() {    
     setOpen(true);
@@ -82,7 +82,8 @@ export default function Main(props) {
       <Toolbar>
       <IconButton
             edge="start"
-            className={classes.menuButton}
+            // className={classes.menuButton}
+            className={'menuButton'}
             color="inherit"
             aria-label="Open drawer"
             onClick={open===true ? ()=>handleDrawerClose() : ()=>handleDrawerOpen()}
@@ -97,7 +98,7 @@ export default function Main(props) {
           className={classes.toolbarButtons} 
           color="inherit" 
           aria-label="Back to home" 
-          onClick={()=>(window.location="/")}>
+          onClick={()=>(window.location.href='/')}>
           <HomeIcon />
           </IconButton>
         </Toolbar>
@@ -128,3 +129,4 @@ export default function Main(props) {
     </div>
   );
 }
+export default Main;

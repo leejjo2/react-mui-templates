@@ -1,4 +1,3 @@
-//https://github.com/mui-org/material-ui/tree/master/docs/src/pages/getting-started/page-layout-examples
 import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -58,7 +57,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SignIn() {
+const SignIn = () => {
   const classes = useStyles();
 
   return (
@@ -71,7 +70,7 @@ export default function SignIn() {
           className={classes.toolbarButtons} 
           color="inherit" 
           aria-label="Back to home" 
-          onClick={()=>(window.location="/")}>
+          onClick={()=>(window.location.href="/")}>
           <HomeIcon />
           </IconButton>
       </AppBar>
@@ -138,3 +137,5 @@ export default function SignIn() {
     </Container>
   );
 }
+
+export default SignIn;

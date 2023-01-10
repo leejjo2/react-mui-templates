@@ -16,7 +16,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 
-function MadeWithLove() {
+const MadeWithLove = () => {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Built with love by the '}
@@ -65,7 +65,7 @@ const useStyles = makeStyles(theme => ({
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-export default function Album() {
+const Album = () => {
   const classes = useStyles();
 
   return (
@@ -81,7 +81,7 @@ export default function Album() {
           className={classes.toolbarButtons} 
           color="inherit" 
           aria-label="Back to home" 
-          onClick={()=>(window.location="/")}>
+          onClick={()=>(window.location.href="/")}>
           <HomeIcon />
           </IconButton>
         </Toolbar>
@@ -161,3 +161,4 @@ export default function Album() {
     </React.Fragment>
   );
 }
+export default Album;
